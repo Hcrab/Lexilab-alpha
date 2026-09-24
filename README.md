@@ -2,13 +2,15 @@
 
 **English** · [简体中文](README.zh-CN.md) · [繁體中文](README.zh-TW.md)
 
-Before the major rebuild of 词源通 (LexiLamp), I built an English-practice platform around daily quizzes. Teachers entered vocabulary and published quizzes; students reviewed meanings, filled in blanks, wrote their own sentences, and revisited their scores and mistakes. This repository preserves that earlier chapter.
+This is a quiz platform for practicing English. Teachers enter vocabulary and publish quizzes; students review meanings, fill in blanks, write sentences of their own, then revisit their scores and mistakes. It uses Next.js and Flask, with MongoDB for data storage.
+
+The project was later rebuilt in [LexilabCode](https://github.com/Hcrab/LexilabCode), with the frontend moving from Next.js to react-scripts.
 
 ![The Lexilab Alpha student home screen, captured with fictional demo data](docs/media/home.png)
 
 ![A browser recording of the three-stage quiz flow](docs/media/quiz-walkthrough.gif)
 
-| Quiz library | Review word meanings |
+| Quiz library | View word meanings |
 | --- | --- |
 | ![Today's and earlier quizzes](docs/media/quiz-library.png) | ![The vocabulary review stage](docs/media/quiz-review.png) |
 
@@ -22,7 +24,7 @@ Before the major rebuild of 词源通 (LexiLamp), I built an English-practice pl
 
 These screens were captured in a local browser with fictional accounts. No real student records are included.
 
-## A practice session, from start to finish
+## Practice flow
 
 ```mermaid
 flowchart LR
@@ -37,13 +39,13 @@ flowchart LR
 
 Each quiz has three stages: vocabulary review, fill-in-the-blanks, and sentence writing. Students can save their place, then see their scores, AI feedback, and earlier attempts after submitting. Teachers can manage users, word pools, quizzes, and statistics.
 
-## How the pieces fit together
+## Architecture
 
 ```mermaid
 flowchart LR
     U["Student and teacher browsers"] --> N["Next.js: pages and API proxy"]
     N --> F["Flask: accounts, quizzes, results, and admin tools"]
-    F --> M["MongoDB: users, questions, attempts, and bookmarks"]
+    F --> M["MongoDB: users, questions, attempts, and saved mistakes"]
     F -.->|With an API key configured| A["DeepSeek: quiz authoring and sentence feedback"]
 ```
 
@@ -81,5 +83,3 @@ Open `http://127.0.0.1:3000`. The demo accounts are `demo_learner` and `demo_tea
 - A repeatable fictional-data seed script for recreating the main README screens.
 
 I rebuilt this public copy from an old server archive. It does not include the old Git history, environment files, runtime logs, databases, student records, or downloaded dependencies. During the cleanup, I removed hard-coded credential fallbacks and request-header logging, closed a draft-quiz access bypass, and added login checks to results, progress, bookmarks, and AI requests.
-
-This is a snapshot of the 2025 quiz phase and a look back at where LexiLamp began. Some older pages still have TypeScript type errors, so the build currently skips type checking; automated tests and deployment safeguards are also incomplete. It is best suited to local exploration and code review, not direct use as a live teaching system.
