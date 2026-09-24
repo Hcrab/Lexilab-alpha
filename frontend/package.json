@@ -1,0 +1,31 @@
+{
+  "name": "lexilab-alpha-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -H 127.0.0.1 -p 3000",
+    "build": "next build",
+    "start": "next start -H 127.0.0.1 -p 3000"
+  },
+  "dependencies": {
+    "@heroicons/react": "^2.2.0",
+    "@types/react-datepicker": "^6.2.0",
+    "luxon": "^3.7.1",
+    "next": "^16.3.6",
+    "react": "^19.0.0",
+    "react-calendar": "^6.0.0",
+    "react-datepicker": "^8.4.0",
+    "react-dom": "^19.0.0",
+    "react-is": "18.3.1",
+    "recharts": "^3.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.28",
+    "tailwindcss": "^3.4.4",
+    "typescript": "^5"
+  }
+}
