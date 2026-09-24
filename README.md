@@ -9,7 +9,7 @@
 
 ![从测验库进入三段式练习的浏览器实录](docs/media/quiz-walkthrough.gif)
 
-| 测验库 | 先看词义 |
+| 测验库 | 词义查看 |
 | --- | --- |
 | ![今日测验与往期测验](docs/media/quiz-library.png) | ![词汇预习阶段](docs/media/quiz-review.png) |
 
